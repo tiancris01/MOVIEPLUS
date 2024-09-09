@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "668965353752",
+    "project_id": "movieplus-cfff8",
+    "storage_bucket": "movieplus-cfff8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668965353752:android:d7c4a36e225b9c8273066d",
+        "android_client_info": {
+          "package_name": "com.example.movieplus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIPnkANUr71aApoClr5gjshtmUhYjuPNU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
