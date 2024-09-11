@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movieplus/src/app/environment/environment.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -24,8 +25,8 @@ class HomeScree extends StatelessWidget {
       appBar: AppBar(
         title: const Text('MoviePlus'),
       ),
-      body: const Center(
-        child: Text('Welcome to MoviePlus'),
+      body: Center(
+        child: Text(Environment.appConfig.movieDbApiKey),
       ),
     );
   }
