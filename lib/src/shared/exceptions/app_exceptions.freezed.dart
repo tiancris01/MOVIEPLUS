@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$AppExceptions {
+  int get statusCode => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
-  int get code => throw _privateConstructorUsedError;
-  String? get identifier => throw _privateConstructorUsedError;
+  String get identifier => throw _privateConstructorUsedError;
 
   /// Create a copy of AppExceptions
   /// with the given fields replaced by the non-null parameter values.
@@ -33,7 +33,7 @@ abstract class $AppExceptionsCopyWith<$Res> {
           AppExceptions value, $Res Function(AppExceptions) then) =
       _$AppExceptionsCopyWithImpl<$Res, AppExceptions>;
   @useResult
-  $Res call({String message, int code, String? identifier});
+  $Res call({int statusCode, String message, String identifier});
 }
 
 /// @nodoc
@@ -51,23 +51,23 @@ class _$AppExceptionsCopyWithImpl<$Res, $Val extends AppExceptions>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? statusCode = null,
     Object? message = null,
-    Object? code = null,
-    Object? identifier = freezed,
+    Object? identifier = null,
   }) {
     return _then(_value.copyWith(
+      statusCode: null == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as int,
-      identifier: freezed == identifier
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$AppExceptionsImplCopyWith<$Res>
       __$$AppExceptionsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String message, int code, String? identifier});
+  $Res call({int statusCode, String message, String identifier});
 }
 
 /// @nodoc
@@ -96,23 +96,23 @@ class __$$AppExceptionsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? statusCode = null,
     Object? message = null,
-    Object? code = null,
-    Object? identifier = freezed,
+    Object? identifier = null,
   }) {
     return _then(_$AppExceptionsImpl(
+      statusCode: null == statusCode
+          ? _value.statusCode
+          : statusCode // ignore: cast_nullable_to_non_nullable
+              as int,
       message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as int,
-      identifier: freezed == identifier
+      identifier: null == identifier
           ? _value.identifier
           : identifier // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -121,19 +121,21 @@ class __$$AppExceptionsImplCopyWithImpl<$Res>
 
 class _$AppExceptionsImpl extends _AppExceptions {
   const _$AppExceptionsImpl(
-      {required this.message, required this.code, required this.identifier})
+      {required this.statusCode,
+      required this.message,
+      required this.identifier})
       : super._();
 
   @override
+  final int statusCode;
+  @override
   final String message;
   @override
-  final int code;
-  @override
-  final String? identifier;
+  final String identifier;
 
   @override
   String toString() {
-    return 'AppExceptions(message: $message, code: $code, identifier: $identifier)';
+    return 'AppExceptions(statusCode: $statusCode, message: $message, identifier: $identifier)';
   }
 
   @override
@@ -141,14 +143,15 @@ class _$AppExceptionsImpl extends _AppExceptions {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppExceptionsImpl &&
+            (identical(other.statusCode, statusCode) ||
+                other.statusCode == statusCode) &&
             (identical(other.message, message) || other.message == message) &&
-            (identical(other.code, code) || other.code == code) &&
             (identical(other.identifier, identifier) ||
                 other.identifier == identifier));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, message, code, identifier);
+  int get hashCode => Object.hash(runtimeType, statusCode, message, identifier);
 
   /// Create a copy of AppExceptions
   /// with the given fields replaced by the non-null parameter values.
@@ -161,17 +164,17 @@ class _$AppExceptionsImpl extends _AppExceptions {
 
 abstract class _AppExceptions extends AppExceptions {
   const factory _AppExceptions(
-      {required final String message,
-      required final int code,
-      required final String? identifier}) = _$AppExceptionsImpl;
+      {required final int statusCode,
+      required final String message,
+      required final String identifier}) = _$AppExceptionsImpl;
   const _AppExceptions._() : super._();
 
   @override
+  int get statusCode;
+  @override
   String get message;
   @override
-  int get code;
-  @override
-  String? get identifier;
+  String get identifier;
 
   /// Create a copy of AppExceptions
   /// with the given fields replaced by the non-null parameter values.

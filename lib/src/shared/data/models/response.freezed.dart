@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AppResponse {
   dynamic get data => throw _privateConstructorUsedError;
   int get statusCode => throw _privateConstructorUsedError;
-  String get statusMessage => throw _privateConstructorUsedError;
+  String? get statusMessage => throw _privateConstructorUsedError;
 
   /// Create a copy of AppResponse
   /// with the given fields replaced by the non-null parameter values.
@@ -33,7 +33,7 @@ abstract class $AppResponseCopyWith<$Res> {
           AppResponse value, $Res Function(AppResponse) then) =
       _$AppResponseCopyWithImpl<$Res, AppResponse>;
   @useResult
-  $Res call({dynamic data, int statusCode, String statusMessage});
+  $Res call({dynamic data, int statusCode, String? statusMessage});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$AppResponseCopyWithImpl<$Res, $Val extends AppResponse>
   $Res call({
     Object? data = freezed,
     Object? statusCode = null,
-    Object? statusMessage = null,
+    Object? statusMessage = freezed,
   }) {
     return _then(_value.copyWith(
       data: freezed == data
@@ -64,10 +64,10 @@ class _$AppResponseCopyWithImpl<$Res, $Val extends AppResponse>
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int,
-      statusMessage: null == statusMessage
+      statusMessage: freezed == statusMessage
           ? _value.statusMessage
           : statusMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -80,7 +80,7 @@ abstract class _$$AppResponseImplCopyWith<$Res>
       __$$AppResponseImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({dynamic data, int statusCode, String statusMessage});
+  $Res call({dynamic data, int statusCode, String? statusMessage});
 }
 
 /// @nodoc
@@ -98,7 +98,7 @@ class __$$AppResponseImplCopyWithImpl<$Res>
   $Res call({
     Object? data = freezed,
     Object? statusCode = null,
-    Object? statusMessage = null,
+    Object? statusMessage = freezed,
   }) {
     return _then(_$AppResponseImpl(
       data: freezed == data
@@ -109,10 +109,10 @@ class __$$AppResponseImplCopyWithImpl<$Res>
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
               as int,
-      statusMessage: null == statusMessage
+      statusMessage: freezed == statusMessage
           ? _value.statusMessage
           : statusMessage // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -131,7 +131,7 @@ class _$AppResponseImpl extends _AppResponse {
   @override
   final int statusCode;
   @override
-  final String statusMessage;
+  final String? statusMessage;
 
   @override
   String toString() {
@@ -167,7 +167,7 @@ abstract class _AppResponse extends AppResponse {
   const factory _AppResponse(
       {required final dynamic data,
       required final int statusCode,
-      required final String statusMessage}) = _$AppResponseImpl;
+      required final String? statusMessage}) = _$AppResponseImpl;
   const _AppResponse._() : super._();
 
   @override
@@ -175,7 +175,7 @@ abstract class _AppResponse extends AppResponse {
   @override
   int get statusCode;
   @override
-  String get statusMessage;
+  String? get statusMessage;
 
   /// Create a copy of AppResponse
   /// with the given fields replaced by the non-null parameter values.

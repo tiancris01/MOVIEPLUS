@@ -8,6 +8,6 @@ class AppResponse with _$AppResponse {
   const factory AppResponse({
     required dynamic data,
     required int statusCode,
-    required String statusMessage,
+    required String? statusMessage,
   }) = _AppResponse;
 }

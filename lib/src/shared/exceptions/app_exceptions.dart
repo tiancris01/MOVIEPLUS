@@ -6,8 +6,8 @@ part 'app_exceptions.freezed.dart';
 class AppExceptions with _$AppExceptions {
   const AppExceptions._();
   const factory AppExceptions({
+    required int statusCode,
     required String message,
-    required int code,
-    required String? identifier,
+    required String identifier,
   }) = _AppExceptions;
 }
