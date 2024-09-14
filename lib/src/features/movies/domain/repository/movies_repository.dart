@@ -4,5 +4,4 @@ import 'package:movieplus/src/features/movies/domain/entities/movie.dart';
 
 abstract interface class MoviesRepository {
   Future<Either<ServerFailure, List<Movie>>> getNowMovies({int page = 0});
-  Future<List<Movie>> getMovies({int page = 0});
 }

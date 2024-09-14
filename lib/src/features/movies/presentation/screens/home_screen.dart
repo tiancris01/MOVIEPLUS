@@ -52,6 +52,14 @@ class _HomeViewState extends ConsumerState<_HomeView> {
                 return ListTile(
                   title: Text(movie.title),
                   subtitle: Text(movie.overview),
+                  leading: Image.network(
+                    movie.backdropPath.isEmpty
+                        ? 'https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ='
+                        : 'https://image.tmdb.org/t/p/w500${movie.backdropPath}',
+                    width: 100,
+                    height: 100,
+                    fit: BoxFit.cover,
+                  ),
                 );
               },
             ),

@@ -21,25 +21,10 @@ class MovieRepositoryImpl implements MoviesRepository {
       final List<Movie> movie =
           response.results.map((e) => e.toDomain()).toList();
       return Right(movie);
-    } on Error catch (e) {
+    } on DioException catch (e) {
+      return Left(ServerFailure.Api(error: e.error as DioException));
+    } on Exception catch (e) {
       return Left(ServerFailure.Format(error: e.toString()));
-    } on DioException catch (e) {
-      return Left(ServerFailure.Api(error: e));
-    }
-  }
-
-  @override
-  Future<List<Movie>> getMovies({int page = 0}) async {
-    try {
-      final MovieModel response =
-          await _remoteDataSource.getNowMovies(page: page);
-      final List<Movie> movie =
-          response.results.map((e) => e.toDomain()).toList();
-      return movie;
-    } on Error catch (e) {
-      throw ServerFailure.Format(error: e.toString());
-    } on DioException catch (e) {
-      throw Left(ServerFailure.Api(error: e));
     }
   }
 }

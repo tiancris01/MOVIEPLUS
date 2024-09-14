@@ -46,7 +46,7 @@ Map<String, dynamic> _$$DatesImplToJson(_$DatesImpl instance) =>
 _$ResultsImpl _$$ResultsImplFromJson(Map<String, dynamic> json) =>
     _$ResultsImpl(
       adult: json['adult'] as bool,
-      backdrop_path: json['backdrop_path'] as String,
+      backdrop_path: _backdrop_path(json['backdrop_path']),
       genre_ids: (json['genre_ids'] as List<dynamic>)
           .map((e) => (e as num).toInt())
           .toList(),

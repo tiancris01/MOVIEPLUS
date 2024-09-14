@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:movieplus/src/app/core/failures/failures.dart';
 import 'package:movieplus/src/features/movies/infrastructure/datasources/movie_data_source.dart';
 import 'package:movieplus/src/features/movies/infrastructure/models/movie_model/movie_model.dart';
 
@@ -19,12 +18,10 @@ class MovieDbDataSource implements MovieDataSource {
 
       final results = MovieModel.fromJson(response.data);
       return results;
-    } on DioException catch (e) {
-      throw ServerFailure.Api(error: e);
-    } on Error catch (e) {
-      throw ServerFailure.Format(error: e.toString());
-    } on Exception catch (e) {
-      throw ServerFailure.Format(error: e.toString());
+    } on DioException {
+      rethrow;
+    } on Exception {
+      rethrow;
     }
   }
 }

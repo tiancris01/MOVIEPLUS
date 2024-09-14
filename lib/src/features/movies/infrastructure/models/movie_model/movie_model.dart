@@ -30,12 +30,16 @@ class Dates with _$Dates {
   factory Dates.fromJson(Map<String, dynamic> json) => _$DatesFromJson(json);
 }
 
+String _backdrop_path(Object? json) {
+  return (json as String?) ?? '';
+}
+
 @freezed
 class Results with _$Results {
   const Results._();
   const factory Results({
     required bool adult,
-    required String backdrop_path,
+    @JsonKey(fromJson: _backdrop_path) required String backdrop_path,
     required List<int> genre_ids,
     required int id,
     required String original_language,

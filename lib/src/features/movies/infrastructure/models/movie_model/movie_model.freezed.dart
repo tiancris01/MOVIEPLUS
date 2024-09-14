@@ -453,6 +453,7 @@ Results _$ResultsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Results {
   bool get adult => throw _privateConstructorUsedError;
+  @JsonKey(fromJson: _backdrop_path)
   String get backdrop_path => throw _privateConstructorUsedError;
   List<int> get genre_ids => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
@@ -483,7 +484,7 @@ abstract class $ResultsCopyWith<$Res> {
   @useResult
   $Res call(
       {bool adult,
-      String backdrop_path,
+      @JsonKey(fromJson: _backdrop_path) String backdrop_path,
       List<int> genre_ids,
       int id,
       String original_language,
@@ -598,7 +599,7 @@ abstract class _$$ResultsImplCopyWith<$Res> implements $ResultsCopyWith<$Res> {
   @useResult
   $Res call(
       {bool adult,
-      String backdrop_path,
+      @JsonKey(fromJson: _backdrop_path) String backdrop_path,
       List<int> genre_ids,
       int id,
       String original_language,
@@ -707,7 +708,7 @@ class __$$ResultsImplCopyWithImpl<$Res>
 class _$ResultsImpl extends _Results {
   const _$ResultsImpl(
       {required this.adult,
-      required this.backdrop_path,
+      @JsonKey(fromJson: _backdrop_path) required this.backdrop_path,
       required final List<int> genre_ids,
       required this.id,
       required this.original_language,
@@ -729,6 +730,7 @@ class _$ResultsImpl extends _Results {
   @override
   final bool adult;
   @override
+  @JsonKey(fromJson: _backdrop_path)
   final String backdrop_path;
   final List<int> _genre_ids;
   @override
@@ -835,7 +837,7 @@ class _$ResultsImpl extends _Results {
 abstract class _Results extends Results {
   const factory _Results(
       {required final bool adult,
-      required final String backdrop_path,
+      @JsonKey(fromJson: _backdrop_path) required final String backdrop_path,
       required final List<int> genre_ids,
       required final int id,
       required final String original_language,
@@ -855,6 +857,7 @@ abstract class _Results extends Results {
   @override
   bool get adult;
   @override
+  @JsonKey(fromJson: _backdrop_path)
   String get backdrop_path;
   @override
   List<int> get genre_ids;
